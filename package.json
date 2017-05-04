@@ -4,7 +4,8 @@
   "description": "vue, webpack,es6",
   "main": "eslintrc.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .js,.vue src"
   },
   "repository": {
     "type": "git",
@@ -12,9 +13,32 @@
   },
   "author": "laosu",
   "license": "MIT",
+  "dependencies": {
+    "axios": "0.15.3",
+    "codemirror": "5.22.0",
+    "dropzone": "4.3.0",
+    "echarts": "3.4.0",
+    "element-ui": "1.2.9",
+    "file-saver": "1.3.3",
+    "jquery": "3.1.1",
+    "js-cookie": "2.1.3",
+    "jsonlint": "1.6.2",
+    "mockjs": "1.0.1-beta3",
+    "normalize.css": "3.0.2",
+    "nprogress": "0.2.0",
+    "showdown": "1.6.4",
+    "simplemde": "1.11.2",
+    "vue": "2.2.6",
+    "vue-multiselect": "2.0.0-beta.14",
+    "vue-router": "2.3.0",
+    "vuedraggable": "2.8.4",
+    "vuex": "2.2.1",
+    "xlsx": "0.8.1",
+    "vue-count-to": "1.0.5"
+  },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
-    "axios-mock-adapter": "^1.8.1", // Axios 模拟数据请求
+    "axios-mock-adapter": "^1.8.1",
     "babel-core": "6.22.1",
     "babel-eslint": "7.1.1",
     "babel-loader": "6.2.10",
@@ -22,7 +46,7 @@
     "babel-preset-es2015": "6.22.0",
     "babel-preset-stage-2": "6.22.0",
     "babel-register": "6.22.0",
-    "chalk": "1.1.3", // 粉笔 可用于改字体颜色
+    "chalk": "1.1.3",
     "connect-history-api-fallback": "1.3.0",
     "copy-webpack-plugin": "4.0.1",
     "css-loader": "0.26.1",
@@ -51,7 +75,7 @@
     "webpack-dashboard": "0.2.1",
     "webpack-dev-middleware": "1.10.0",
     "webpack-hot-middleware": "2.16.1",
-    "webpack-merge": "2.6.1" //WebPACK合并
+    "webpack-merge": "2.6.1"
   },
   "engines": {
     "node": ">= 4.0.0",
