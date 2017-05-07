@@ -1,5 +1,6 @@
-<template lang="jade">
-  .login-container
-    el-form(autoComplete="on" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left" label-width="0px" class="car-box login-form")
-      h3.title 系统登录
+<template>
+ 
+  <div class="login-container">
+     <h3 class="title">系统登录</h3>
+  </div>
 </template>
