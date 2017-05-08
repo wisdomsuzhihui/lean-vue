@@ -7,7 +7,7 @@ import store from './store';
 // import ElementUI from 'element-ui';
 // import 'element-ui/lib/theme-default/index.css';
 // import 'assets/custom-theme/index.css'; // https://github.com/PanJiaChen/custom-element-theme
-// import NProgress from 'nprogress';
+import NProgress from 'nprogress';
 // import 'nprogress/nprogress.css';
 // import 'normalize.css/normalize.css';
 // import 'styles/index.scss';
