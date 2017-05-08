@@ -80,6 +80,14 @@ router.afterEach(() => {
 
 // 生产环境错误日志
 if (process.env === 'production') {
+  Vue.config.errorHandler((err, vm) => {
+    console.log(err, window.location.href);
+    errLog.pushLog({
+      err,
+      url: window.location.href,
+      vm
+    })
+  })
   // Vue.config.errorHandler = function (err, vm) {
   //   console.log(err, window.location.href);
   //   errLog.pushLog({
