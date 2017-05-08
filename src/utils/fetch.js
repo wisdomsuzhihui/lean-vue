@@ -4,7 +4,11 @@ import {
 } from 'element-ui';
 import store from '../store';
 import router from '../router';
-
+/**
+ * Vuex.Store: https://vuex.vuejs.org/zh-cn/api.html
+ * axios: http://www.jianshu.com/p/df464b26ae58
+ * ES6 promise: http://es6.ruanyifeng.com/#docs/promise 
+ */
 export default function _fetch(options) {
   console.log(options)
   return new Promise((resolve, reject) => {

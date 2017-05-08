@@ -4,7 +4,7 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import store from './store';
-// import ElementUI from 'element-ui';
+import ElementUI from 'element-ui';
 // import 'element-ui/lib/theme-default/index.css';
 // import 'assets/custom-theme/index.css'; // https://github.com/PanJiaChen/custom-element-theme
 import NProgress from 'nprogress';
@@ -26,7 +26,7 @@ import NProgress from 'nprogress';
 // register globally
 // Vue.component('multiselect', Multiselect);
 // Vue.component('Sticky', Sticky);
-// Vue.use(ElementUI);
+Vue.use(ElementUI);
 // Vue.use(vueWaves);
 // Vue.use(vueSticky);
 
@@ -80,14 +80,14 @@ router.afterEach(() => {
 
 // 生产环境错误日志
 if (process.env === 'production') {
-  Vue.config.errorHandler = function (err, vm) {
-    console.log(err, window.location.href);
-    errLog.pushLog({
-      err,
-      url: window.location.href,
-      vm
-    })
-  };
+  // Vue.config.errorHandler = function (err, vm) {
+  //   console.log(err, window.location.href);
+  //   errLog.pushLog({
+  //     err,
+  //     url: window.location.href,
+  //     vm
+  //   })
+  // };
 }
 
 // window.onerror = function (msg, url, lineNo, columnNo, error) {

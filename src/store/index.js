@@ -5,7 +5,9 @@ import user from './modules/user';
 import getters from './getters';
 
 Vue.use(Vuex);
-
+/**
+ *  https://vuex.vuejs.org/zh-cn/api.html
+ */
 const store = new Vuex.Store({
   modules: {
     app,
