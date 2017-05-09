@@ -23,6 +23,9 @@ import Multiselect from 'vue-multiselect';
 // import './mock/index.js';
 import './styles/mixin.scss';
 import mongoose from 'mongoose';
+/**
+ * Vuex结合Mongoose最佳实践: https://segmentfault.com/a/1190000006125791
+ */
 mongoose.connect()
 // register globally
 Vue.component('multiselect', Multiselect);
