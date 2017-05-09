@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Route from 'vue-router';
 
 /* layout */
-import Layout from '../views/layout/Layout';
+// import Layout from '../views/layout/Layout';
 
 /** login */
 import Login from '../views/login/';
