@@ -5,14 +5,14 @@ import App from './App';
 import router from './router';
 import store from './store';
 import ElementUI from 'element-ui';
-// import 'element-ui/lib/theme-default/index.css';
-// import 'assets/custom-theme/index.css'; // https://github.com/PanJiaChen/custom-element-theme
+import 'element-ui/lib/theme-default/index.css';
+import 'assets/custom-theme/index.css'; // https://github.com/PanJiaChen/custom-element-theme
 import NProgress from 'nprogress';
-// import 'nprogress/nprogress.css';
-// import 'normalize.css/normalize.css';
-// import 'styles/index.scss';
-// import 'components/Icon-svg/index';
-// import 'assets/iconfont/iconfont';
+import 'nprogress/nprogress.css';
+import 'normalize.css/normalize.css';
+import 'styles/index.scss';
+import 'components/Icon-svg/index';
+import 'assets/iconfont/iconfont';
 // import * as filters from './filters';
 // import Multiselect from 'vue-multiselect';
 // import Sticky from 'components/Sticky';
@@ -21,7 +21,7 @@ import NProgress from 'nprogress';
 // import vueSticky from './directive/sticky';
 // import errLog from 'store/errLog';
 // import './mock/index.js';
-// import './styles/mixin.scss';
+import './styles/mixin.scss';
 
 // register globally
 // Vue.component('multiselect', Multiselect);
@@ -44,7 +44,10 @@ function hasPermission(roles, permissionRoles) {
 const whiteList = ['/login', '/authredirect', '/reset', '/sendpwd']; // 不重定向白名单
 router.beforeEach((to, from, next) => {
   NProgress.start();
+
   if (store.getters.token) {
+    console.log(to.path + ':' +
+      to.meta + ':' + to.meta.role)
     if (to.path === '/login') {
       next({
         path: '/'
