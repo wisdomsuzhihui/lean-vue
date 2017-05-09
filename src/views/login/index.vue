@@ -56,7 +56,7 @@
       };
       return {
         loginForm: {
-          email: 'admin@wallstreetcn.com',
+          email: 'admin@laosu.club',
           password: ''
         },
         loginRules: {
@@ -78,11 +78,17 @@
     },
     methods: {
       handleLogin() {
+        // 表单验证方法
         this.$refs.loginForm.validate(valid => {
           if (valid) {
             this.loading = true;
+            // 验证通过,调用store里user的LoginByEmail方法
+            /**
+            es6 箭头函数不用考虑 this指向问题
+             */
             this.$store.dispatch('LoginByEmail', this.loginForm).then(() => {
               this.loading = false;
+              // 成功后路由跳转首页
               this.$router.push({ path: '/' });
               // this.showDialog = true;
             }).catch(err => {

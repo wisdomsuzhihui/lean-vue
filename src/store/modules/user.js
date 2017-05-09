@@ -72,6 +72,9 @@ const user = {
     }, userInfo) {
       const email = userInfo.email.trim();
       return new Promise((resolve, reject) => {
+        /**
+         * 调用的是login api 中loginByEmail方法
+         */
         loginByEmail(email, userInfo.password).then(response => {
           const data = response.data;
           Cookies.set('X-Ivanka-Token', response.data.token);
