@@ -14,7 +14,7 @@ import 'styles/index.scss';
 import 'components/Icon-svg/index';
 import 'assets/iconfont/iconfont';
 // import * as filters from './filters';
-// import Multiselect from 'vue-multiselect';
+import Multiselect from 'vue-multiselect';
 // import Sticky from 'components/Sticky';
 // import 'vue-multiselect/dist/vue-multiselect.min.css';
 // import vueWaves from './directive/waves';
@@ -22,9 +22,10 @@ import 'assets/iconfont/iconfont';
 // import errLog from 'store/errLog';
 // import './mock/index.js';
 import './styles/mixin.scss';
-
+import mongoose from 'mongoose';
+mongoose.connect()
 // register globally
-// Vue.component('multiselect', Multiselect);
+Vue.component('multiselect', Multiselect);
 // Vue.component('Sticky', Sticky);
 Vue.use(ElementUI);
 // Vue.use(vueWaves);
@@ -35,6 +36,10 @@ Vue.use(ElementUI);
 // Object.keys(filters).forEach(key => {
 //   Vue.filter(key, filters[key])
 // });
+
+
+
+
 
 function hasPermission(roles, permissionRoles) {
   if (roles.indexOf('admin') >= 0) return true;
