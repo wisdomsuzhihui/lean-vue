@@ -1,5 +1,6 @@
 require('./check-versions')(); // 检查 Node 和 npm 版本
 var config = require('../config/');
+var mongoose = require('mongoose');
 
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
@@ -33,7 +34,11 @@ hotMiddleware = require('webpack-hot-middleware')(compiler, {
 
   }
 });
-
+/**
+ * Vuex结合Mongoose最佳实践: https://segmentfault.com/a/1190000006125791
+ */
+mongoose.connect(config.dev.dbUrl.db
+  .uri, config.dev.dbUrl.db.options)
 // force page reload when html-webpack-plugin template changes
 compiler.plugin('compilation', function (compilation) {
   compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
@@ -71,7 +76,13 @@ app.use(staticPath, express.static('./static')),
 devMiddleware.waitUntilValid(function () {
   console.log('> Listening at ' + uri + '\n')
 })
-
+// 如果是开发环境
+if (process.env === 'development') {
+  app.set('showStackError', true); // 在屏幕上将错误信息打印出来
+  app.use(logger(':method :url :status')); // 显示请求的类型、路径和状态
+  app.locals.pretty = true; // 源码格式化，不要压缩
+  mongoose.set('debug', true); // 显示数据库查询信息
+}
 module.exports = app.listen(port, function (err) {
   if (err) {
     console.log(err);

@@ -3,7 +3,6 @@ import {
 } from 'utils/fetch';
 
 export function loginByEmail(email, password) {
-  console.log(email)
   const data = {
     email,
     password

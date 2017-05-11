@@ -1,5 +1,6 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+// https://github.com/Ma63d/kov-blog
 import Vue from 'vue';
 import App from './App';
 import router from './router';
@@ -20,13 +21,9 @@ import Multiselect from 'vue-multiselect';
 // import vueWaves from './directive/waves';
 // import vueSticky from './directive/sticky';
 // import errLog from 'store/errLog';
-// import './mock/index.js';
+import './mock/index.js';
 import './styles/mixin.scss';
-// import mongoose from 'mongoose';
-/**
- * Vuex结合Mongoose最佳实践: https://segmentfault.com/a/1190000006125791
- */
-// mongoose.connect()
+
 // register globally
 Vue.component('multiselect', Multiselect);
 // Vue.component('Sticky', Sticky);
@@ -108,6 +105,8 @@ if (process.env === 'production') {
   //   })
   // };
 }
+
+
 
 // window.onerror = function (msg, url, lineNo, columnNo, error) {
 //     console.log('window')
